@@ -375,11 +375,58 @@
   .ba-head{ display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:20px; flex-wrap:wrap; }
   .ba-title{ font-family:'Shippori Mincho', serif; font-size:21px; font-weight:700; }
   .ba-title small{ display:block; font-family:'Zen Kaku Gothic New',sans-serif; font-size:11.5px; font-weight:700; letter-spacing:.12em; color:var(--rust); margin-bottom:6px; }
-  .ba-note{ font-size:12.5px; color:var(--ink-soft); max-width:34ch; }
-  .ba-frame{ border-radius:16px; overflow:hidden; border:1px solid var(--line); box-shadow:0 16px 32px -18px rgba(44,42,37,0.4); background:#fff; }
-  .ba-frame img{ width:100%; display:block; }
+  .ba-note{ font-size:12.5px; color:var(--ink-soft); max-width:54ch; line-height:1.8; }
+  .ba-frame{
+    position:relative;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    border-radius:16px;
+    overflow:visible;
+    border:1px solid var(--line);
+    box-shadow:0 16px 32px -18px rgba(44,42,37,0.4);
+    background:transparent;
+  }
+  .ba-compare-item{
+    position:relative;
+    overflow:hidden;
+    border-radius:16px;
+    border:1px solid var(--line);
+    background:#fff;
+  }
+  .ba-compare-item img{ width:100%; display:block; height:100%; object-fit:cover; }
+  .ba-compare-divider{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,0.92);
+    border:1px solid rgba(31,111,111,0.2);
+    box-shadow:0 10px 22px -14px rgba(44,42,37,0.45);
+    z-index:2;
+  }
+  .ba-compare-divider svg{
+    width:24px;
+    height:24px;
+    stroke:#1f6f6f;
+    stroke-width:2.2;
+    fill:none;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
   .ba-icons{ margin-top:22px; display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
-  @media (max-width:640px){ .ba-icons{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:640px){
+    .ba-frame{ grid-template-columns:1fr; gap:12px; }
+    .ba-compare-divider{ width:42px; height:42px; }
+    .ba-compare-divider svg{ width:18px; height:18px; }
+    .ba-icons{ grid-template-columns:repeat(2,1fr); }
+  }
 
   /* ============ Instagram block ============ */
   .insta-panel{
