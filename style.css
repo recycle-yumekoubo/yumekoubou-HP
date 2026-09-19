@@ -111,22 +111,31 @@
     overflow:hidden;
     box-shadow:0 20px 38px -18px rgba(44,42,37,0.45);
     border:1px solid var(--line);
+    aspect-ratio:16 / 9;
+    background:#dfeaf4;
   }
-  .hero img{ width:100%; display:block; aspect-ratio:16/9; object-fit:cover; }
+  .hero img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    object-position:center;
+  }
   .hero-overlay{
     position:absolute; inset:0;
-    background:linear-gradient(0deg, rgba(20,18,14,0.75) 0%, rgba(20,18,14,0.05) 55%);
+    background:linear-gradient(180deg, rgba(17,20,24,.10) 0%, rgba(17,20,24,.20) 35%, rgba(17,20,24,.68) 100%);
   }
   .hero-content{
     position:absolute; left:0; right:0; bottom:0;
     padding:34px 36px;
     color:#fff;
+    box-sizing:border-box;
   }
   .hero-content .eyebrow{ color:#f0c9a8; }
   .hero-content .eyebrow-row .bar{ background:#f0c9a8; }
-  .hero-content h1{ color:#fff; font-size:34px; margin-bottom:12px; }
+  .hero-content h1{ color:#fff; font-size:34px; margin-bottom:12px; line-height:1.35; }
   .hero-content h1 .accent{ color:#8fd7d2; }
-  .hero-content p{ font-size:14.5px; line-height:1.85; color:#e7e2d6; max-width:52ch; margin:0 0 18px; }
+  .hero-content p{ font-size:14.5px; line-height:1.75; color:#e7e2d6; max-width:52ch; margin:0 0 18px; }
   .hero-badges{ display:flex; gap:10px; flex-wrap:wrap; }
   .hero-badge{
     display:flex; align-items:center; gap:7px;
@@ -138,22 +147,26 @@
   .hero-badge svg{ width:14px; height:14px; stroke:#fff; fill:none; }
   @media (max-width:640px){
     .hero-wrap{ padding:18px 16px 0; }
-    .hero{ border-radius:14px; }
-    .hero img{ aspect-ratio:4/5; }
+    .hero{
+      border-radius:14px;
+      aspect-ratio:16 / 9.2;
+      max-height:420px;
+      min-height:240px;
+    }
     .hero-content{
-      left:12px;
-      right:12px;
-      bottom:12px;
+      left:10px;
+      right:10px;
+      bottom:10px;
       width:auto;
-      padding:18px 16px 16px;
+      padding:12px 12px 14px;
       box-sizing:border-box;
     }
-    .hero-content .eyebrow-row{ gap:8px; margin-bottom:10px; }
+    .hero-content .eyebrow-row{ gap:8px; margin-bottom:6px; }
     .hero-content .eyebrow-row .bar{ width:24px; }
-    .hero-content h1{ font-size:22px; line-height:1.45; margin-bottom:8px; }
-    .hero-content p{ font-size:12.5px; line-height:1.7; margin:0 0 10px; max-width:none; }
-    .hero-badges{ gap:8px; }
-    .hero-badge{ padding:7px 10px; font-size:11px; }
+    .hero-content h1{ font-size:clamp(20px, 5.4vw, 26px); line-height:1.2; margin-bottom:8px; }
+    .hero-content p{ font-size:11.5px; line-height:1.48; margin:0 0 10px; max-width:none; }
+    .hero-badges{ gap:6px; }
+    .hero-badge{ padding:6px 9px; font-size:10.5px; }
   }
 
   /* ============ Photo pair (item lineup / work scenes) ============ */
