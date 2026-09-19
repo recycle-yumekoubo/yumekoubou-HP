@@ -84,6 +84,25 @@
   .accent{ color:var(--teal-deep); }
   .sub{ font-size:15.5px; color:var(--ink-soft); line-height:1.9; margin:0 0 40px; max-width:58ch; }
 
+  /* ============ News ============ */
+  .news-section{
+    max-width:900px;
+    margin:0 auto;
+    padding:52px 40px 18px;
+  }
+  .news-section h2{ margin-bottom:24px; }
+  .news-image-frame{
+    overflow:hidden;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:var(--panel);
+    box-shadow:0 14px 30px -14px rgba(44,42,37,0.35);
+  }
+  .news-image-frame img{ width:100%; display:block; height:auto; }
+  @media (max-width:640px){
+    .news-section{ padding:40px 20px 12px; }
+  }
+
   /* ============ Hero ============ */
   .hero-wrap{ max-width:980px; margin:0 auto; padding:28px 24px 0; }
   .hero{
