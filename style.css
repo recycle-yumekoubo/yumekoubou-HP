@@ -302,13 +302,13 @@
     border-top:1px solid #38352c;
     padding:8px 6px calc(8px + env(safe-area-inset-bottom));
   }
-  .mobile-bar-inner{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; max-width:520px; margin:0 auto; }
+  .mobile-bar-inner{ display:grid; grid-template-columns:repeat(4,1fr); gap:4px; max-width:520px; margin:0 auto; }
   .mobile-bar a{
     display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;
-    padding:8px 4px;
+    min-width:0; padding:8px 2px;
     border-radius:12px;
     text-decoration:none;
-    font-size:11px; font-weight:700; letter-spacing:.02em;
+    font-size:10px; font-weight:700; letter-spacing:0;
     color:#f2ede2;
   }
   .mobile-bar a svg{ width:19px; height:19px; stroke:#f2ede2; fill:none; }
@@ -317,10 +317,30 @@
   .mobile-bar a.mb-line{ background:#06C755; color:#fff; }
   .mobile-bar a.mb-line svg{ stroke:none; fill:#fff; }
   .mobile-bar a.mb-map{ background:#2c2a25; border:1px solid #45412f; }
+  .mobile-bar button.mb-menu{
+    min-width:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;
+    padding:8px 2px; border:0; border-radius:12px; background:#4b463b; color:#f2ede2;
+    font-family:'Zen Kaku Gothic New', sans-serif; font-size:10px; font-weight:700; letter-spacing:0; cursor:pointer;
+  }
+  .hamburger-icon{ width:19px; height:19px; display:flex; flex-direction:column; justify-content:center; gap:4px; }
+  .hamburger-icon span{ display:block; width:19px; height:2px; border-radius:2px; background:#f2ede2; transition:transform .2s ease, opacity .2s ease; }
+  .mb-menu[aria-expanded="true"] .hamburger-icon span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+  .mb-menu[aria-expanded="true"] .hamburger-icon span:nth-child(2){ opacity:0; }
+  .mb-menu[aria-expanded="true"] .hamburger-icon span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
   @media (max-width:760px){
     .mobile-bar{ display:block; }
     body{ padding-bottom:64px; }
   }
+
+  .mobile-menu{ display:none; position:fixed; inset:0; z-index:70; background:rgba(30,28,23,.48); }
+  .mobile-menu.is-open{ display:block; }
+  .mobile-menu-panel{ position:absolute; right:0; top:0; bottom:0; width:min(82vw,360px); padding:22px 22px 90px; overflow-y:auto; background:var(--cream); box-shadow:-12px 0 30px -18px rgba(0,0,0,.55); }
+  .mobile-menu-head{ display:flex; align-items:center; justify-content:space-between; padding-bottom:18px; border-bottom:1px solid var(--line); color:var(--teal-deep); font-size:14px; letter-spacing:.12em; }
+  .mobile-menu-close{ width:34px; height:34px; border:1px solid var(--line); border-radius:50%; background:var(--panel); color:var(--ink); font-size:25px; line-height:1; cursor:pointer; }
+  .mobile-menu-links{ display:flex; flex-direction:column; }
+  .mobile-menu-links a{ padding:17px 4px; border-bottom:1px solid var(--line); color:var(--ink); font-family:'Shippori Mincho',serif; font-size:17px; font-weight:700; text-decoration:none; }
+  .mobile-menu-links a::after{ content:'→'; float:right; color:var(--rust); font-family:'Zen Kaku Gothic New',sans-serif; }
+  @media (min-width:761px){ .mobile-menu{ display:none !important; } }
 
   /* ============ Before / After showcase ============ */
   .ba-wrap{ margin-top:46px; padding-top:38px; border-top:1px solid var(--line); }
