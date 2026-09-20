@@ -395,19 +395,6 @@
   section{ scroll-margin-top:70px; }
   /* ============ LINE button (header) ============ */
   .top-actions{ display:flex; align-items:center; gap:16px; }
-  .form-btn{
-    display:inline-flex; align-items:center; justify-content:center;
-    background:var(--teal-deep);
-    color:#fff;
-    font-size:12.5px; font-weight:700;
-    padding:10px 16px;
-    border-radius:999px;
-    text-decoration:none;
-    white-space:nowrap;
-    box-shadow:0 8px 18px -8px rgba(21,79,79,.55);
-    transition:transform .15s ease, box-shadow .15s ease;
-  }
-  .form-btn:hover{ transform:translateY(-1px); }
   .line-btn{
     display:flex; align-items:center; gap:6px;
     background:#06C755;
@@ -433,15 +420,16 @@
     border-top:1px solid #38352c;
     padding:8px 6px calc(8px + env(safe-area-inset-bottom));
   }
-  .mobile-bar-inner{ display:grid; grid-template-columns:repeat(4,1fr); gap:4px; max-width:520px; margin:0 auto; }
+  .mobile-bar-inner{ display:grid; grid-template-columns:repeat(4,1fr); gap:5px; max-width:540px; margin:0 auto; }
   .mobile-bar a,
   .mobile-bar button.mb-menu{
     display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;
-    min-width:0; padding:8px 2px;
+    min-width:0; padding:8px 2px 7px;
     border-radius:12px;
     text-decoration:none;
     font-size:10px; font-weight:700; letter-spacing:0;
     color:#f2ede2;
+    line-height:1.2;
   }
   .mobile-bar a svg{ width:19px; height:19px; stroke:#f2ede2; fill:none; }
   .mobile-bar a.mb-call{ background:var(--teal-deep); color:#fff; }
@@ -452,7 +440,7 @@
   .mobile-bar a.mb-line svg{ stroke:none; fill:#fff; }
   .mobile-bar button.mb-menu{
     min-width:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;
-    padding:8px 2px; border:0; border-radius:12px; background:#4b463b; color:#f2ede2;
+    padding:8px 2px 7px; border:0; border-radius:12px; background:#4b463b; color:#f2ede2;
     font-family:'Zen Kaku Gothic New', sans-serif; font-size:10px; font-weight:700; letter-spacing:0; cursor:pointer;
   }
   .hamburger-icon{ width:19px; height:19px; display:flex; flex-direction:column; justify-content:center; gap:4px; }
