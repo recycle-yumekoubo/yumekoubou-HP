@@ -25,7 +25,6 @@
   - 公式Instagram(recycle.yumekoubo)
 
   - Googleアカウント(recycle.yumekoubo@gmail.com)
-  -PW Dono7058 生年月日は1974.4.12で登録。電話番号は堂下広行様の携帯電話で登録
 　-Googleフォーム、GitHubアカウントはGoogleアカウントで作成。
 　-GitHubアカウント(recycle-yumekoubo) swpsにCollaboration設定済み
 ---
