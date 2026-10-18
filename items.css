@@ -1,0 +1,200 @@
+:root {
+  color-scheme: light;
+  --cream: #f7f4ee;
+  --paper: #fffefa;
+  --ink: #2c2a25;
+  --ink-soft: #5b5750;
+  --teal: #1f6f6f;
+  --teal-deep: #154f4f;
+  --rust: #a15530;
+  --rust-soft: #c97a4a;
+  --line: #e3ddd0;
+  --shadow: 0 18px 42px -28px rgba(44, 42, 37, .42);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  line-height: 1.7;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+a:focus-visible { outline: 3px solid var(--rust-soft); outline-offset: 4px; }
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  padding: 10px 14px;
+  transform: translateY(-150%);
+  border-radius: 8px;
+  background: #fff;
+}
+.skip-link:focus { transform: translateY(0); }
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid rgba(227, 221, 208, .9);
+  background: rgba(247, 244, 238, .95);
+  backdrop-filter: blur(12px);
+}
+.header-inner {
+  display: flex;
+  width: min(1160px, 100% - 48px);
+  min-height: 76px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.brand { display: inline-flex; flex-direction: column; color: var(--ink); line-height: 1.2; text-decoration: none; white-space: nowrap; }
+.brand-small { font-size: 10px; font-weight: 700; letter-spacing: .08em; }
+.brand-name { color: var(--rust); font-family: "Shippori Mincho", serif; font-size: 23px; font-weight: 700; letter-spacing: .08em; }
+.header-nav { display: flex; align-items: center; gap: clamp(14px, 2.4vw, 30px); }
+.header-nav a { color: var(--ink-soft); font-size: 12px; font-weight: 700; text-decoration: none; }
+.header-nav a:hover { color: var(--teal-deep); }
+.header-home {
+  display: inline-flex;
+  min-height: 40px;
+  padding: 7px 13px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid var(--teal-deep);
+  border-radius: 7px;
+  color: var(--teal-deep);
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.header-home:hover { background: var(--teal-deep); color: white; }
+.header-phone { color: var(--teal-deep); font-family: "Shippori Mincho", serif; font-size: 17px; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.page-hero {
+  position: relative;
+  display: grid;
+  min-height: 470px;
+  overflow: hidden;
+  align-items: center;
+  background: #232622;
+  color: white;
+}
+.hero-image, .hero-shade { position: absolute; inset: 0; }
+.hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 52%; opacity: .56; }
+.hero-shade { background: linear-gradient(90deg, rgba(25, 31, 28, .92) 0%, rgba(25, 31, 28, .74) 47%, rgba(25, 31, 28, .18) 100%); }
+.hero-inner { position: relative; width: min(1080px, 100% - 48px); margin: 0 auto; padding: 76px 0; }
+.eyebrow { display: flex; margin: 0 0 14px; align-items: center; gap: 11px; color: var(--rust); font-size: 11px; font-weight: 900; letter-spacing: .13em; }
+.eyebrow > span { width: 28px; height: 2px; background: var(--rust-soft); }
+.page-hero .eyebrow { color: #f0c9a8; }
+.page-hero .eyebrow > span { background: #f0c9a8; }
+h1, h2, h3 { font-family: "Shippori Mincho", serif; }
+h1 { margin: 0 0 13px; font-size: clamp(36px, 5vw, 60px); line-height: 1.4; }
+h1 span { color: #9bd2cb; }
+.hero-inner > p:not(.eyebrow) { max-width: 51ch; margin-bottom: 23px; color: #e7e2d6; font-size: 14px; line-height: 2; }
+.hero-link { display: inline-flex; align-items: center; gap: 11px; color: #fff; font-size: 12px; font-weight: 700; text-decoration: none; }
+.hero-link span { display: grid; width: 28px; height: 28px; place-items: center; border: 1px solid rgba(255,255,255,.65); border-radius: 50%; }
+.hero-label { position: absolute; right: max(24px, calc((100vw - 1080px) / 2)); bottom: 20px; color: rgba(255,255,255,.82); font-size: 10px; letter-spacing: .08em; }
+.category-nav { display: flex; justify-content: center; border-bottom: 1px solid var(--line); background: var(--paper); }
+.category-nav a { display: flex; min-height: 67px; padding: 0 30px; align-items: center; gap: 11px; border-right: 1px solid var(--line); color: var(--ink); font-size: 12px; font-weight: 700; text-decoration: none; }
+.category-nav a:first-child { border-left: 1px solid var(--line); }
+.category-nav a:hover { background: #f1eee5; color: var(--teal-deep); }
+.category-nav span { color: var(--rust); font-family: "Shippori Mincho", serif; font-size: 12px; }
+.item-section { width: min(1080px, 100% - 48px); margin: 0 auto; padding: 80px 0 84px; }
+.item-section-tinted { width: 100%; max-width: none; padding: 80px max(24px, calc((100vw - 1080px) / 2)) 84px; background: #eeece4; }
+.section-heading { max-width: 680px; margin-bottom: 30px; }
+.section-heading h2 { margin: 0 0 10px; font-size: clamp(28px, 3.2vw, 38px); line-height: 1.5; }
+.section-heading > p:last-child { margin: 0; color: var(--ink-soft); font-size: 13px; line-height: 1.9; }
+.item-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.item-card { position: relative; min-width: 0; overflow: hidden; margin: 0; border: 1px solid var(--line); border-radius: 9px; background: var(--paper); box-shadow: var(--shadow); }
+.item-card-tall { grid-row: span 2; }
+.item-card img { width: 100%; height: 235px; object-fit: cover; transition: transform .35s ease; }
+.item-card-tall img { height: 100%; min-height: 488px; }
+.item-card:hover img { transform: scale(1.035); }
+.item-card figcaption { display: flex; min-height: 66px; padding: 11px 14px; flex-direction: column; justify-content: center; gap: 2px; }
+.item-card figcaption strong { font-size: 13px; }
+.item-card figcaption span { color: var(--ink-soft); font-size: 10px; }
+.item-grid-fishing { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.item-grid-fishing .item-card img { height: 300px; }
+.item-grid-seasonal { grid-template-columns: 1.05fr .95fr; align-items: stretch; }
+.item-grid-seasonal .item-card img { height: 350px; }
+.seasonal-note { display: flex; padding: clamp(24px, 4vw, 48px); flex-direction: column; align-items: flex-start; justify-content: center; border: 1px solid var(--line); border-radius: 9px; background: var(--paper); }
+.seasonal-mark { margin-bottom: 12px; padding: 5px 11px; border-radius: 99px; background: #f5eadb; color: var(--rust); font-size: 10px; font-weight: 700; }
+.seasonal-note h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.55; }
+.seasonal-note p { margin: 0 0 17px; color: var(--ink-soft); font-size: 12px; line-height: 1.9; }
+.seasonal-note > a { color: var(--teal-deep); font-family: "Shippori Mincho", serif; font-size: 21px; font-weight: 700; text-decoration: none; }
+.visit-section { padding: 75px 24px; background: var(--teal-deep); color: white; text-align: center; }
+.visit-inner { max-width: 760px; margin: 0 auto; }
+.visit-section .eyebrow { justify-content: center; color: #f0c9a8; }
+.visit-section .eyebrow > span { background: #f0c9a8; }
+.visit-section h2 { margin: 0 0 12px; font-size: clamp(25px, 3vw, 34px); line-height: 1.5; }
+.visit-section .visit-inner > p:not(.eyebrow) { margin-bottom: 0; color: #e0e7df; font-size: 12px; line-height: 1.9; }
+.visit-actions { display: flex; margin-top: 23px; justify-content: center; gap: 10px; }
+.button { display: inline-flex; min-height: 48px; padding: 10px 18px; align-items: center; justify-content: center; border: 1px solid transparent; border-radius: 7px; font-size: 12px; font-weight: 700; text-decoration: none; }
+.button-primary { background: white; color: var(--teal-deep); }
+.button-secondary { border-color: rgba(255,255,255,.65); color: white; }
+.button-secondary:hover { background: rgba(255,255,255,.1); }
+.visit-section .visit-inner .visit-address { margin-top: 21px; font-size: 10px; }
+.site-footer { display: flex; min-height: 94px; padding: 20px 24px 74px; align-items: center; justify-content: space-between; gap: 14px; background: #262d2a; color: #e8e7df; }
+.footer-brand { font-family: "Shippori Mincho", serif; font-size: 12px; text-decoration: none; }
+.footer-brand strong { color: #f0c9a8; font-size: 16px; }
+.footer-home { display: inline-flex; min-height: 40px; padding: 8px 14px; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,.6); border-radius: 7px; color: #fff; font-size: 11px; font-weight: 700; text-decoration: none; }
+.footer-home:hover { background: rgba(255,255,255,.1); }
+.site-footer p { margin: 0; color: #c3c5bc; font-size: 10px; }
+.mobile-cta { display: none; }
+@media (max-width: 900px) {
+  .item-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .item-card-tall img { min-height: 488px; }
+  .header-nav { gap: 13px; }
+  .header-nav a { font-size: 11px; }
+}
+@media (max-width: 680px) {
+  html { scroll-padding-top: 66px; }
+  .header-inner { width: calc(100% - 32px); min-height: 66px; }
+  .brand-name { font-size: 20px; }
+  .header-nav { display: none; }
+  .header-home { min-height: 38px; padding: 6px 10px; font-size: 10px; }
+  .header-phone { display: none; }
+  .page-hero { min-height: 420px; }
+  .hero-image img { object-position: 44% center; }
+  .hero-shade { background: linear-gradient(90deg, rgba(25, 31, 28, .91), rgba(25, 31, 28, .48)); }
+  .hero-inner { width: calc(100% - 40px); padding: 60px 0; }
+  h1 { font-size: clamp(36px, 10vw, 48px); }
+  .hero-inner > p:not(.eyebrow) { max-width: 42ch; font-size: 12px; }
+  .hero-label { right: 18px; font-size: 9px; }
+  .category-nav { justify-content: flex-start; overflow-x: auto; }
+  .category-nav a { min-width: max-content; min-height: 58px; padding: 0 17px; font-size: 11px; }
+  .item-section { width: calc(100% - 36px); padding-top: 62px; padding-bottom: 64px; }
+  .item-section-tinted { width: 100%; padding: 62px 18px 64px; }
+  .section-heading { margin-bottom: 22px; }
+  .section-heading h2 { font-size: 29px; }
+  .section-heading > p:last-child { font-size: 12px; }
+  .item-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .item-card-tall { grid-row: auto; }
+  .item-card-tall img, .item-card img { height: auto; min-height: 0; aspect-ratio: 4 / 3; }
+  .item-card figcaption { min-height: 60px; padding: 9px; }
+  .item-card figcaption strong { font-size: 11px; }
+  .item-card figcaption span { font-size: 9px; line-height: 1.45; }
+  .item-grid-fishing { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .item-grid-fishing .item-card img { height: auto; aspect-ratio: 4 / 3; }
+  .item-grid-seasonal { grid-template-columns: 1fr; }
+  .item-grid-seasonal .item-card img { height: auto; aspect-ratio: 4 / 3; }
+  .seasonal-note { padding: 23px; }
+  .seasonal-note h3 { font-size: 19px; }
+  .visit-section { padding: 62px 20px; }
+  .visit-section h2 { font-size: 26px; }
+  .visit-actions { flex-direction: column; }
+  .site-footer { padding-bottom: 92px; flex-wrap: wrap; }
+  .footer-home { order: 3; }
+  .site-footer p { flex-basis: 100%; text-align: center; }
+  .mobile-cta { position: fixed; right: 0; bottom: 0; left: 0; z-index: 25; display: grid; padding: 10px max(12px, env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); grid-template-columns: 1fr 1fr; gap: 9px; border-top: 1px solid var(--line); background: rgba(255,254,250,.96); backdrop-filter: blur(10px); }
+  .mobile-cta a { display: grid; min-height: 43px; place-items: center; border-radius: 7px; background: var(--teal-deep); color: white; font-size: 11px; font-weight: 700; text-decoration: none; }
+  .mobile-cta a + a { background: var(--rust); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}

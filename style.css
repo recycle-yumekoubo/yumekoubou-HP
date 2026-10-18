@@ -65,6 +65,71 @@
   .top-phone svg{ width:15px; height:15px; stroke:var(--teal-deep); fill:none; }
   @media (max-width:760px){ .topnav{ display:none; } }
 
+  .seiri-link-section{
+    max-width:980px;
+    margin:24px auto 0;
+    padding:0 24px;
+  }
+  .seiri-link-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:22px 26px;
+    border:1px solid var(--line);
+    border-left:4px solid var(--rust-soft);
+    border-radius:12px;
+    background:linear-gradient(120deg, #fffefa, #f2eee4);
+    box-shadow:0 12px 26px -22px rgba(44,42,37,.4);
+  }
+  .seiri-link-label{
+    display:block;
+    margin-bottom:3px;
+    color:var(--rust);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.08em;
+  }
+  .seiri-link-inner h2{
+    margin:0 0 3px;
+    font-size:20px;
+    line-height:1.5;
+  }
+  .seiri-link-inner p{
+    margin:0;
+    color:var(--ink-soft);
+    font-size:12px;
+    line-height:1.7;
+  }
+  .seiri-link-inner > a{
+    display:inline-flex;
+    min-height:46px;
+    flex-shrink:0;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    padding:10px 18px;
+    border-radius:8px;
+    background:var(--teal-deep);
+    color:#fff;
+    font-size:13px;
+    font-weight:700;
+    text-decoration:none;
+  }
+  .seiri-link-inner > a:hover{ background:var(--teal); }
+  .seiri-link-inner > a span{ font-size:18px; }
+  @media (max-width:640px){
+    .topbar-inner{ padding:10px 16px; gap:8px; }
+    .brand{ font-size:15px; }
+    .top-actions{ gap:8px; }
+    .top-phone{ gap:4px; font-size:12px; }
+    .top-phone svg{ width:13px; height:13px; }
+    .seiri-link-section{ margin-top:18px; padding:0 16px; }
+    .seiri-link-inner{ align-items:stretch; flex-direction:column; gap:14px; padding:18px; }
+    .seiri-link-inner h2{ font-size:18px; }
+    .seiri-link-inner > a{ width:100%; }
+  }
+
   .sheet{
     max-width:900px;
     margin:0 auto;
@@ -148,6 +213,8 @@
   @media (max-width:640px){
     .hero-wrap{ padding:18px 16px 0; }
     .hero{
+      width:100%;
+      min-width:0;
       border-radius:14px;
       aspect-ratio:16 / 9.2;
       max-height:420px;
@@ -258,6 +325,33 @@
   .icon-circle{ width:52px; height:52px; border-radius:50%; background:linear-gradient(160deg, var(--teal) 0%, var(--teal-deep) 100%); display:flex; align-items:center; justify-content:center; }
   .icon-circle svg{ width:26px; height:26px; stroke:#fff; fill:none; }
   .icon-label{ font-size:12px; font-weight:700; color:var(--ink); letter-spacing:.02em; line-height:1.4; }
+  .items-page-cta{
+    margin-top:32px;
+    padding:22px 24px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:rgba(255,255,255,0.72);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+  }
+  .items-page-cta p{ margin:0; color:var(--ink-soft); font-size:13px; line-height:1.7; }
+  .items-page-cta a{
+    display:inline-flex;
+    flex-shrink:0;
+    align-items:center;
+    gap:12px;
+    padding:12px 18px;
+    border-radius:8px;
+    background:var(--teal-deep);
+    color:#fff;
+    font-size:13px;
+    font-weight:700;
+    text-decoration:none;
+  }
+  .items-page-cta a:hover{ background:var(--teal); }
+  .items-page-cta a span{ font-size:18px; }
   @media (max-width:640px){
     .buy-hero{ grid-template-columns:1fr; gap:18px; padding:16px 14px; }
     .buy-badge{ font-size:11px; }
@@ -266,6 +360,8 @@
     .buy-copy p{ font-size:12.5px; line-height:1.75; }
     .buy-image-wrap{ min-height:180px; }
     .icon-strip{ grid-template-columns:repeat(3,1fr); }
+    .items-page-cta{ align-items:stretch; flex-direction:column; padding:18px; }
+    .items-page-cta a{ justify-content:center; }
   }
 
   /* ============ Service panels ============ */
@@ -511,11 +607,31 @@
     stroke-linejoin:round;
   }
   .ba-icons{ margin-top:22px; display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .work-seiri-cta{ display:flex; margin-top:28px; justify-content:center; }
+  .work-seiri-cta a{
+    display:inline-flex;
+    min-height:48px;
+    padding:12px 22px;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    border-radius:999px;
+    background:var(--teal-deep);
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    text-align:center;
+    text-decoration:none;
+    transition:background-color .18s ease, transform .18s ease;
+  }
+  .work-seiri-cta a:hover{ transform:translateY(-2px); background:var(--teal); }
+  .work-seiri-cta a span{ font-size:18px; }
   @media (max-width:640px){
     .ba-frame{ grid-template-columns:1fr; gap:12px; }
     .ba-compare-divider{ width:42px; height:42px; }
     .ba-compare-divider svg{ width:18px; height:18px; }
     .ba-icons{ grid-template-columns:repeat(2,1fr); }
+    .work-seiri-cta a{ width:100%; padding-inline:14px; font-size:13px; }
   }
 
   /* ============ Instagram block ============ */
